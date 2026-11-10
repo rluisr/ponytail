@@ -26,7 +26,7 @@ function skillDefinitions() {
     if (!name) return [];
     const description = match[1].match(/^description:\s*>?\s*\r?\n((?:[ \t]+.*(?:\r?\n|$))*)/m)?.[1]
       ?.split(/\r?\n/).map((line) => line.trim()).filter(Boolean).join(' ');
-    return [{ id: name, name, description, location, content: match[2].trim() }];
+    return [{ id: name, name, description, path: location, content: match[2].trim() }];
   });
 }
 
